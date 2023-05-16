@@ -379,7 +379,7 @@ x^* = \operatorname{argmax} \left( P(\hat{y}_1|x) - P(\hat{y}_2|x) \right),
 x^* = \operatorname{argmax} \left( - \sum P(y_i|x)\operatorname{log} P(y_i|x) \right)
 \]</div>
 <h1 id="example-code">Example Code</h1>
-<div class="highlight"><pre><span></span><code>from autora.experimentalist.sampler.uncertainty import uncertainty_sampler
+<div class="highlight"><pre><span></span><code>from autora.experimentalist.sampler.uncertainty_sampler import uncertainty_sampler
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 
@@ -393,7 +393,7 @@ lr_theorist = LogisticRegression()
 lr_theorist.fit(X,y)
 
 #Sampler
-X_new = uncertainty_sampler(X, lr_theorist, n)
+X_new = uncertainty_sampler(X, lr_theorist, n, measure =&quot;least_confident&quot;)
 </code></pre></div>
 
 
