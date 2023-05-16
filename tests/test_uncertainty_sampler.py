@@ -1,13 +1,20 @@
-from autora.experimentalist.sampler.uncertainty_sampler import example_sampler
+from autora.experimentalist.sampler.uncertainty import uncertainty_sampler
+from sklearn.linear_model import LogisticRegression
 import numpy as np
 
 def test_output_dimensions():
-    X = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
-    n = 2
-    X_new = example_sampler(X, n)
+    #Meta-Setup
+    X = np.linspace(start=-3, stop=6, num=10).reshape(-1, 1)
+    y = (X**2).reshape(-1)
+    n = 5
+    
+    #Theorists
+    lr_theorist = LogisticRegression()
+    
+    lr_theorist.fit(X,y)
+
+    #Sampler
+    X_new = uncertainty_sampler(X, lr_theorist, n)
 
     # Check that the sampler returns n experiment conditions
     assert X_new.shape == (n, X.shape[1])
-
-
-# Note: We encourage you to adjust this test and write more tests.

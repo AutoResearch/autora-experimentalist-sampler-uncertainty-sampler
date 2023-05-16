@@ -13,5 +13,5 @@ pip install -U autora["experimentalist-sampler-uncertainty-sampler"]
 
 Check your installation by running:
 ```shell
-python -c "from autora.experimentalist.sampler.uncertainty_sampler import Example"
+python -c "from autora.experimentalist.sampler.uncertainty_sampler import uncertainty_sampler"
 ```
