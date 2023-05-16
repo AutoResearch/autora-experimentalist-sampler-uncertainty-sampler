@@ -1,4 +1,4 @@
-from autora.experimentalist.sampler.uncertainty import uncertainty_sampler
+from autora.experimentalist.sampler.uncertainty_sampler import uncertainty_sampler
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 
