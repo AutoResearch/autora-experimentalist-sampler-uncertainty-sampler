@@ -1,4 +1,4 @@
-# Uncertainty Sampler
+# AutoRA Uncertainty Sampler
 
 The uncertainty sampler identifies experimental conditions $\vec{x}' \in X'$ with respect model uncertainty. Within the uncertainty sampler, there are three methods to determine uncertainty:
 
