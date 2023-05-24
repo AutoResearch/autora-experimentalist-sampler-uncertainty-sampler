@@ -2,7 +2,7 @@
 # UPDATE THIS BEFORE PUBLISHING
 name = "autora-experimentalist-sampler-uncertainty-sampler"
 description = "Sampler based on where the model is least certain."
-authors = [{ name = "Built by Sebastian Musslick, refactored by Chad Williams", email = "sebastian_musslick@brown.edu" }]
+authors = [{ name = "Built by Sebastian Musslick, restructured by Chad Williams", email = "sebastian_musslick@brown.edu" }]
 dynamic = ["version"]
 
 readme = "README.md"
