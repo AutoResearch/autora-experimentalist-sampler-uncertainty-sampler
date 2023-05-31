@@ -4,7 +4,7 @@ The uncertainty sampler identifies experimental conditions $\vec{x}' \in X'$ wit
 
 ## Least Confident
 $$
-x^* = \operatorname{argmax} \left( 1-P(\hat{y}|x) \right),
+x^* = {\operatorname{argmax}} \left( 1-P(\hat{y}|x) \right),
 $$
 
 where $\hat{y} = \operatorname{argmax} P(y_i|x)$
