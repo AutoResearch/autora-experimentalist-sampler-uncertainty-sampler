@@ -2,7 +2,9 @@ from typing import Iterable
 import numpy as np
 from scipy.stats import entropy
 
-def uncertainty_sampler(X, model, n, measure="least_confident"):
+from autora.utils.deprecation import deprecated_alias
+
+def uncertainty_sample(X, model, n, measure="least_confident"):
     """
 
     Args:
@@ -57,3 +59,5 @@ def uncertainty_sampler(X, model, n, measure="least_confident"):
         )
 
     return X[idx]
+
+uncertainty_sampler = deprecated_alias(uncertainty_sample, "uncertainty_sampler")
