@@ -25,7 +25,7 @@ $$
 # Example Code
 
 ```
-from autora.experimentalist.sampler.uncertainty import uncertainty_sampler
+from autora.experimentalist.sampler.uncertainty import uncertainty_sample
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 
@@ -39,5 +39,5 @@ lr_theorist = LogisticRegression()
 lr_theorist.fit(X,y)
 
 #Sampler
-X_new = uncertainty_sampler(X, lr_theorist, n, measure ="least_confident")
+X_new = uncertainty_sample(X, lr_theorist, n, measure ="least_confident")
 ```
