@@ -4,13 +4,13 @@ from scipy.stats import entropy
 
 from autora.utils.deprecation import deprecated_alias
 
-def uncertainty_sample(X, model, n, measure="least_confident"):
+def uncertainty_sample(X, model, num_samples, measure="least_confident"):
     """
 
     Args:
         X: pool of IV conditions to evaluate uncertainty
         model: Scikit-learn model, must have `predict_proba` method.
-        n: number of samples to select
+        num_samples: number of samples to select
         measure: method to evaluate uncertainty. Options:
 
             - `'least_confident'`: $x* = \\operatorname{argmax} \\left( 1-P(\\hat{y}|x) \\right)$,
@@ -36,7 +36,7 @@ def uncertainty_sample(X, model, n, measure="least_confident"):
         # Calculate uncertainty of max probability class
         a_uncertainty = 1 - a_prob.max(axis=1)
         # Get index of largest uncertainties
-        idx = np.flip(a_uncertainty.argsort()[-n:])
+        idx = np.flip(a_uncertainty.argsort()[-num_samples:])
 
     elif measure == "margin":
         # Sort values by row descending
@@ -44,13 +44,13 @@ def uncertainty_sample(X, model, n, measure="least_confident"):
         # Calculate difference between 2 largest probabilities
         a_margin = -a_part[:, 0] + a_part[:, 1]
         # Determine index of smallest margins
-        idx = a_margin.argsort()[:n]
+        idx = a_margin.argsort()[:num_samples]
 
     elif measure == "entropy":
         # Calculate entropy
         a_entropy = entropy(a_prob.T)
         # Get index of largest entropies
-        idx = np.flip(a_entropy.argsort()[-n:])
+        idx = np.flip(a_entropy.argsort()[-num_samples:])
 
     else:
         raise ValueError(
