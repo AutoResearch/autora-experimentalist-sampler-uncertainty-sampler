@@ -4,7 +4,8 @@ from scipy.stats import entropy
 
 from autora.utils.deprecation import deprecated_alias
 
-def uncertainty_sample(X, model, num_samples, measure="least_confident"):
+
+def sample(X, model, num_samples, measure="least_confident"):
     """
 
     Args:
@@ -60,4 +61,6 @@ def uncertainty_sample(X, model, num_samples, measure="least_confident"):
 
     return X[idx]
 
+
+uncertainty_sample = sample
 uncertainty_sampler = deprecated_alias(uncertainty_sample, "uncertainty_sampler")
