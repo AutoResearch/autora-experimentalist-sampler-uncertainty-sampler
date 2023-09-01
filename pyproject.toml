@@ -1,6 +1,6 @@
 [project]
 # UPDATE THIS BEFORE PUBLISHING
-name = "autora-experimentalist-sampler-uncertainty"
+name = "autora-experimentalist-uncertainty"
 description = "Sampler based on where the model is least certain."
 authors = [{ name = "Built by Sebastian Musslick, restructured by Chad Williams", email = "sebastian_musslick@brown.edu" }]
 dynamic = ["version"]
@@ -22,7 +22,7 @@ dev = [
 
 [project.urls]
 homepage = "http://www.empiricalresearch.ai"
-repository = "https://github.com/AutoResearch/autora-experimentalist-sampler-uncertainty"
+repository = "https://github.com/AutoResearch/autora-experimentalist-uncertainty"
 documentation = "https://autoresearch.github.io/autora/"
 
 

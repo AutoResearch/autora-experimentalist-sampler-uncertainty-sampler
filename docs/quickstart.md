@@ -7,11 +7,11 @@ You will need:
 *Uncertainty-Sampler is a part of the `autora` package:
 
 ```shell
-pip install -U autora["experimentalist-sampler-uncertainty"]
+pip install -U autora["experimentalist-uncertainty"]
 ```
 
 
 Check your installation by running:
 ```shell
-python -c "from autora.experimentalist.sampler.uncertainty import uncertainty_sample"
+python -c "from autora.experimentalist.uncertainty import uncertainty_sample"
 ```

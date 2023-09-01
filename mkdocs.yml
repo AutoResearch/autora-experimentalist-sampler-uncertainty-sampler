@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 INHERIT: mkdocs/base.yml  # use the shared AutoRA configuration by default
 
-site_name: AutoRA Uncertainty Sampler
-repo_url: 'https://github.com/AutoResearch/autora-experimentalist-sampler-uncertainty'
+site_name: AutoRA Uncertainty
+repo_url: 'https://github.com/AutoResearch/autora-experimentalist-uncertainty'
 
 nav:
 - Home: 'index.md'

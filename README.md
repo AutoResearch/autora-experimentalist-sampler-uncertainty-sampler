@@ -1,6 +1,6 @@
-# AutoRA Uncertainty Sampler
+# AutoRA Uncertainty Experimentalist
 
-The uncertainty sampler identifies experimental conditions $\vec{x}' \in X'$ with respect model uncertainty. Within the uncertainty sampler, there are three methods to determine uncertainty:
+The uncertainty experimentalist identifies experimental conditions $\vec{x}' \in X'$ with respect model uncertainty. Within the uncertainty sampler, there are three methods to determine uncertainty:
 
 ## Least Confident
 $$
@@ -25,7 +25,7 @@ $$
 # Example Code
 
 ```
-from autora.experimentalist.sampler.uncertainty import uncertainty_sample
+from autora.experimentalist.uncertainty import uncertainty_sample
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 
