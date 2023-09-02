@@ -1,6 +1,6 @@
 # AutoRA Uncertainty Experimentalist
 
-The uncertainty experimentalist identifies experimental conditions $\vec{x}' \in X'$ with respect model uncertainty. Within the uncertainty sampler, there are three methods to determine uncertainty:
+The uncertainty experimentalist identifies experimental conditions $\vec{x}' \in X'$ with respect model uncertainty. Within the uncertainty experimentalist, there are three methods to determine uncertainty:
 
 ## Least Confident
 $$
@@ -38,6 +38,6 @@ n = 5
 lr_theorist = LogisticRegression()
 lr_theorist.fit(X,y)
 
-#Sampler
+#Experimentalist
 X_new = uncertainty_sample(X, lr_theorist, n, measure ="least_confident")
 ```
