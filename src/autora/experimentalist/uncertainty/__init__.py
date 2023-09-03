@@ -1,16 +1,22 @@
-from typing import Iterable
+from typing import Union
 
 import numpy as np
+import pandas as pd
 from scipy.stats import entropy
 
 from autora.utils.deprecation import deprecated_alias
 
 
-def sample(X, model, num_samples, measure="least_confident"):
+def sample(
+        conditions: Union[pd.DataFrame, np.ndarray],
+        model,
+        num_samples,
+        measure="least_confident",
+):
     """
 
     Args:
-        X: pool of IV conditions to evaluate uncertainty
+        conditions: pool of IV conditions to evaluate uncertainty
         model: Scikit-learn model, must have `predict_proba` method.
         num_samples: number of samples to select
         measure: method to evaluate uncertainty. Options:
@@ -25,12 +31,10 @@ def sample(X, model, num_samples, measure="least_confident"):
               $x* = \\operatorname{argmax} \\left( - \\sum P(y_i|x)
               \\operatorname{log} P(y_i|x) \\right)$
 
-    Returns: Sampled pool
+    Returns: Sampled conditions
 
     """
-
-    if isinstance(X, Iterable):
-        X = np.array(list(X))
+    X = np.array(conditions)
 
     a_prob = model.predict_proba(X)
 
@@ -60,7 +64,11 @@ def sample(X, model, num_samples, measure="least_confident"):
             f"Only 'least_confident', 'margin', or 'entropy' is supported."
         )
 
-    return X[idx]
+    new_conditions = X[idx]
+    if isinstance(conditions, pd.DataFrame):
+        new_conditions = pd.DataFrame(X[idx], columns=conditions.columns)
+
+    return new_conditions
 
 
 uncertainty_sample = sample
