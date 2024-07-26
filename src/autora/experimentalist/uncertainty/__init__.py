@@ -8,10 +8,10 @@ from autora.utils.deprecation import deprecated_alias
 
 
 def sample(
-        conditions: Union[pd.DataFrame, np.ndarray],
-        model,
-        num_samples,
-        measure="least_confident",
+    conditions: Union[pd.DataFrame, np.ndarray],
+    model,
+    num_samples,
+    measure="least_confident",
 ):
     """
 
@@ -66,7 +66,9 @@ def sample(
 
     new_conditions = X[idx]
     if isinstance(conditions, pd.DataFrame):
-        new_conditions = pd.DataFrame(X[idx], columns=conditions.columns)
+        new_conditions = pd.DataFrame(new_conditions, columns=conditions.columns)
+    else:
+        new_conditions = pd.DataFrame(new_conditions)
 
     return new_conditions
 
