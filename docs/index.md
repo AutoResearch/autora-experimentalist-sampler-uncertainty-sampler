@@ -3,7 +3,7 @@
 The uncertainty experimentalist identifies experimental conditions $\vec{x}' \in X'$ with respect model uncertainty. Within the uncertainty experimentalist, there are three methods to determine uncertainty:
 
 !!! hint
-    Note that model your model must have a ``predict_proba'' function, providing a probability for each label. 
+    Note that model your model must have a `predict_proba` function, providing a probability for each label. 
 
 ## Least Confident
 $$
